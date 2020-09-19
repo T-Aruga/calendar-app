@@ -11,10 +11,12 @@ const router = new Router({
     //ルーティングの設定
     {
       path: "/",
+      name: "home",
       component: Home,
     },
     {
       path: "/about",
+      name: "about",
       component: About,
     },
   ],

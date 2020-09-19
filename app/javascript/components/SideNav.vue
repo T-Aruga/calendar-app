@@ -13,7 +13,7 @@
 
         <v-divider></v-divider>
 
-        <v-list-item v-for="(item, index) in items" :key="index">
+        <v-list-item v-for="(item, index) in items" :key="index" :to="item.link">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -32,7 +32,8 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: '連絡先一覧', icon: 'mdi-menu' }
+        { title: 'Home', icon: 'mdi-home', link: { name: 'home' } },
+        { title: 'About', icon: 'mdi-information', link: { name: 'about' } }
       ]
     }
   },
