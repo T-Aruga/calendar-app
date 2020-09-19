@@ -15,11 +15,13 @@ import router from "../routes/router.js";
 import App from '../App.vue'
 import axios from "axios";
 import VueAxios from "vue-axios";
+import eventHub from "../eventHub.js"
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(Vuetify)
+Vue.use(eventHub)
 
 const vuetify = new Vuetify();
 

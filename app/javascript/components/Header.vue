@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click.stop="toggleSideMenu"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="openSideMenu"></v-app-bar-nav-icon>
       <v-toolbar-title>My Original Calendar!</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
@@ -21,7 +21,9 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['toggleSideMenu'])
+    openSideMenu() {
+      this.$eventHub.$emit('open-sidemenu')
+    }
   }
 }
 </script>
