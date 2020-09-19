@@ -12,7 +12,7 @@ import Vuex from "vuex"
 import VueRouter from "vue-router";
 import store from "../store/store.js";
 import router from "../routes/router.js";
-import App from '../app.vue'
+import App from '../App.vue'
 import axios from "axios";
 import VueAxios from "vue-axios";
 

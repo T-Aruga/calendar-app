@@ -1,16 +1,27 @@
 <template>
-  <header id="header">
-    <v-app-bar>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>This is Header.vue</v-toolbar-title>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-app-bar-nav-icon @click.stop="toggleSideMenu"></v-app-bar-nav-icon>
+      <v-toolbar-title>My Original Calendar!</v-toolbar-title>
+      <v-spacer></v-spacer>
     </v-app-bar>
-  </header>
+  </v-app>
 </template>
 
 <script>
-  export default {
-    name: 'Header',
+import { mapMutations } from 'vuex'
+
+export default {
+  name: 'Header',
+  data () {
+    return {
+      items: [
+        { title: '連絡先一覧', icon: 'mdi-menu' }
+      ]
+    }
+  },
+  methods: {
+    ...mapMutations(['toggleSideMenu'])
   }
+}
 </script>
