@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid fill-height>
+  <v-container class="fill-height" fluid>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list>
         <v-list-item>
