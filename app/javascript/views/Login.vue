@@ -35,11 +35,10 @@
     },
     methods: {
       login() {
-        const params = {
-          user: this.user
-        }
-        this.axios.post("/api/sign_in", params).then(res => {
+        this.axios.post("/api/sign_in", { user: this.user }).then(res => {
           console.log(res)
+          const user = res["data"]
+          this.$store.commit('set-user', user)
           this.$router.push({ name: 'calendar' })
         }).catch(err => {
           console.log(err)

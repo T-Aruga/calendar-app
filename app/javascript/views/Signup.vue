@@ -37,11 +37,8 @@
     },
     methods: {
       signup() {
-        const params = {
-          user: this.user
-        }
-        this.axios.post("/api/user", params).then(res => {
-          this.$router.push({ name: 'calendar' })
+        this.axios.post("/api/user", { user: this.user }).then(res => {
+          this.$router.push({ name: 'login' })
         }).catch(err => {
           console.log(err)
         })

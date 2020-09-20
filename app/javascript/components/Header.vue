@@ -27,6 +27,14 @@
       </template>
       <span>Let's Login!</span>
     </v-tooltip>
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn icon v-bind="attrs" v-on="on" @click="Logout">
+          <v-icon>mdi-logout</v-icon>
+        </v-btn>
+      </template>
+      <span>Logout</span>
+    </v-tooltip>
   </v-app-bar>
 </template>
 
@@ -42,6 +50,9 @@ export default {
   methods: {
     openSideMenu() {
       this.$eventHub.$emit('open-sidemenu')
+    },
+    Logout(){
+      
     }
   }
 }

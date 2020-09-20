@@ -3,10 +3,15 @@ class SessionsController < ApplicationController
   def sign_in
     user = User.find_by(email: params[:user][:email])
     if user&.authenticate(params[:user][:password])
-      session[:user_id] = user.id
-      render json: { message: 'ログインに成功しました!', name: user.name }
+      log_in(user)
+      render json: user.as_json(only: [:name, :email] )
     else
       render json: { error: 'メールアドレスもしくはパスワードが正しくありません' }, status: :unauthorized
     end
+  end
+
+  def sign_out
+    session.delete(:user_id)
+    @current_user = nil
   end
 end
