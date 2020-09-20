@@ -2,9 +2,9 @@
   <v-container class="fill-height" fluid>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list>
-        <v-list-item>
+        <v-list-item class='mt-4'>
           <v-list-item-avatar>
-            <img src="https://avatars2.githubusercontent.com/u/1363954?s=460&v=4">
+            <img src="https://1.bp.blogspot.com/-r0SdJLU4eWk/X1CK7MQfwvI/AAAAAAABaws/QoCcnan3kO42i4Gmhpjil0Iy0BvIGzY4wCNcBGAsYHQ/s400/hair_okappa_boy.png">
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>有賀 達也</v-list-item-title>
@@ -43,6 +43,9 @@ export default {
     this.$eventHub.$on('open-sidemenu', () => {
       this.drawer = true
     })
+  },
+  beforeDestroy() {
+    this.$eventHub.$off('open-sidemenu')
   }
 }
 </script>

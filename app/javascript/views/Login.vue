@@ -10,8 +10,8 @@
         </v-toolbar>
         <v-card-text>
           <v-form>
-            <v-text-field label="Email" name="email" prepend-icon="mdi-email-outline" type="text" v-model="email"/>
-            <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-eye-off" type="password" v-model="password"/>
+            <v-text-field label="Email" name="email" prepend-icon="mdi-email-outline" type="text" v-model="user.email"/>
+            <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-eye-off" type="password" v-model="user.password"/>
             <div class="text-center">
               <v-btn @click="login" color="primary" large outlined>Login</v-btn>
             </div>
@@ -27,8 +27,10 @@
   export default {
     data () {
       return {
-        email: "",
-        password: ""
+        user: {
+          email: "",
+          password: ""
+        }
       }
     },
     methods: {
