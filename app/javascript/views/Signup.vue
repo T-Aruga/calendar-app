@@ -1,7 +1,7 @@
 <template>
   <v-row align="center" justify="center">
     <v-col cols="12" sm="8" md="4">
-      <v-card>
+      <v-card class="elevation-12">
         <v-toolbar color="primary" dark flat>
           <v-spacer></v-spacer>
             <v-icon>mdi-account</v-icon>
