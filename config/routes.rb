@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   scope :api, defaults: { format: :json } do
     post '/sign_in', to: 'sessions#sign_in'
-    post '/sign_out', to: 'sessions#sign_out'
+    delete '/sign_out', to: 'sessions#sign_out'
     post '/user', to: 'users#create'
     get '/check_session', to: 'users#check_session_valid'
   end

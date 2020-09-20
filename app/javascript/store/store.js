@@ -11,6 +11,9 @@ const store = new Vuex.Store({
   mutations: {
     'set-user' (state, payload) {
       state.user = payload
+    },
+    'logout-user' (state) {
+      state.user = null
     }
   },
   actions: {},

@@ -52,7 +52,11 @@ export default {
       this.$eventHub.$emit('open-sidemenu')
     },
     Logout(){
-      
+      this.axios.delete("/api/sign_out").then(res => {
+        this.$store.commit('logout-user')
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 }

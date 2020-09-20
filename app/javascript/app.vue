@@ -15,20 +15,31 @@
 </template>
 
 <script>
-  import Header from "./components/Header"
-  import SideNav from './components/SideNav'
+import Header from "./components/Header"
+import SideNav from './components/SideNav'
 
-  export default {
-    components: {
-      Header,
-      SideNav
-    },
-    data: function() {
-      return {
-        message: "Hello Vue!",
-      };
-    },
-  };
+export default {
+  components: {
+    Header,
+    SideNav
+  },
+  data: function() {
+    return {
+      message: "Hello Vue!",
+    };
+  },
+  mounted() {
+    this.$store.watch(
+      (state) => state.user,
+      (value) => {
+        const authUser = value
+        if (!authUser) {
+          this.$router.push({ name: 'login' })
+        }
+      }
+    )
+  }
+};
 </script>
 
 <style scoped>

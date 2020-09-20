@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
   end
 
   def sign_out
-    session.delete(:user_id)
-    @current_user = nil
+    log_out if logged_in?
   end
 end
