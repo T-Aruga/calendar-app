@@ -5,7 +5,7 @@
     <v-spacer></v-spacer>
     <v-tooltip bottom>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn icon v-bind="attrs" v-on="on" @click="$router.push({ name: 'login' })">
+        <v-btn icon v-bind="attrs" v-on="on" @click="$router.push({ name: 'calendar' })">
           <v-icon>mdi-calendar</v-icon>
         </v-btn>
       </template>

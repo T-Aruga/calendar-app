@@ -35,7 +35,15 @@
     },
     methods: {
       login() {
-
+        const params = {
+          user: this.user
+        }
+        this.axios.post("/api/sign_in", params).then(res => {
+          console.log(res)
+          this.$router.push({ name: 'calendar' })
+        }).catch(err => {
+          console.log(err)
+        })
       }
     }
   }

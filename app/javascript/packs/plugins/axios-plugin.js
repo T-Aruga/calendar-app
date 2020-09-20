@@ -5,6 +5,7 @@ export default VueAxiosPlugin.install = function(Vue, { axios }) {
     "X-Requested-With": "XMLHttpRequest",
     "X-CSRF-Token": csrf_token
   }
+  axios.defaults.withCredentials = true
 
   Vue.axios = axios
   Object.defineProperties(Vue.prototype, {

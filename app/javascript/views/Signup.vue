@@ -14,7 +14,7 @@
             <v-text-field label="Email" name="email" prepend-icon="mdi-email-outline" type="text" v-model="user.email"/>
             <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-eye-off" type="password" v-model="user.password"/>
             <div class="text-center">
-              <v-btn @click="signup" color="primary" large outlined>Login</v-btn>
+              <v-btn @click="signup" color="primary" large outlined>Sign Up</v-btn>
             </div>
           </v-form>
         </v-card-text>
