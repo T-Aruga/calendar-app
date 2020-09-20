@@ -5,6 +5,14 @@
     <v-spacer></v-spacer>
     <v-tooltip bottom>
       <template v-slot:activator="{ on, attrs }">
+        <v-btn icon v-bind="attrs" v-on="on" @click="$router.push({ name: 'login' })">
+          <v-icon>mdi-calendar</v-icon>
+        </v-btn>
+      </template>
+      <span>Check Cakendar</span>
+    </v-tooltip>
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on" @click="$router.push({ name: 'signup' })">
           <v-icon>mdi-account</v-icon>
         </v-btn>

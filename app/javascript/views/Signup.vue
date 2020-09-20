@@ -14,7 +14,7 @@
             <v-text-field label="Email" name="email" prepend-icon="mdi-email-outline" type="text" v-model="user.email"/>
             <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-eye-off" type="password" v-model="user.password"/>
             <div class="text-center">
-              <v-btn @click="login" color="primary" large outlined>Login</v-btn>
+              <v-btn @click="signup" color="primary" large outlined>Login</v-btn>
             </div>
           </v-form>
         </v-card-text>
@@ -36,12 +36,12 @@
       }
     },
     methods: {
-      login() {
+      signup() {
         const params = {
           user: this.user
         }
         this.axios.post("/api/user", params).then(res => {
-          console.log(res)
+          this.$router.push({ name: 'calendar' })
         }).catch(err => {
           console.log(err)
         })

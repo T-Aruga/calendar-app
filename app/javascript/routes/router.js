@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Login from "../views/Login.vue";
 import Signup from "../views/Signup.vue";
+import Calendar from "../views/Calendar.vue";
 
 
 Vue.use(Router);
@@ -21,6 +22,11 @@ const router = new Router({
       path: "/about",
       name: "about",
       component: About,
+    },
+    {
+      path: "/calendar",
+      name: "calendar",
+      component: Calendar,
     },
     {
       path: "/login",

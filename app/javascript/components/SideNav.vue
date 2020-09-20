@@ -33,7 +33,8 @@ export default {
       drawer: false,
       items: [
         { title: 'Home', icon: 'mdi-home', link: { name: 'home' } },
-        { title: 'About', icon: 'mdi-information', link: { name: 'about' } }
+        { title: 'About', icon: 'mdi-information', link: { name: 'about' } },
+        { title: 'My Calendar', icon: 'mdi-calendar', link: { name: 'calendar' } }
       ]
     }
   },
