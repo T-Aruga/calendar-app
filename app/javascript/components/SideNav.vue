@@ -13,7 +13,7 @@
 
         <v-divider></v-divider>
 
-        <v-list-item v-for="(item, index) in items" :key="index" :to="item.link">
+        <v-list-item v-for="(item, index) in filteredItems" :key="index" :to="item.link">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -32,13 +32,28 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'Home', icon: 'mdi-home', link: { name: 'home' } },
-        { title: 'About', icon: 'mdi-information', link: { name: 'about' } },
-        { title: 'My Calendar', icon: 'mdi-calendar', link: { name: 'calendar' } }
+        { title: 'Home', icon: 'mdi-home', link: { name: 'home' }, isPublic: true },
+        { title: 'About', icon: 'mdi-information', link: { name: 'about' }, isPublic: true },
+        { title: 'My Calendar', icon: 'mdi-calendar', link: { name: 'calendar' }, isPublic: false }
       ]
     }
   },
   computed: {
+    loginUser () {
+      return this.$store.state.user
+    },
+    isLogin () {
+      return this.loginUser ? true : false
+    },
+    filteredItems () {
+      if (this.isLogin) {
+        return this.items
+      } else {
+        return this.items.filter(item => {
+          return item.isPublic === true
+        })
+      }
+    }
   },
   mounted() {
     this.$eventHub.$on('open-sidemenu', () => {
