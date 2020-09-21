@@ -36,12 +36,12 @@
     methods: {
       login() {
         this.axios.post("/api/sign_in", { user: this.user }).then(res => {
-          console.log(res)
           const user = res["data"]
           this.$store.commit('set-user', user)
           this.$router.push({ name: 'calendar' })
+          this.$eventHub.$emit('show-snackbar', { body: 'ログインに成功しました'})
         }).catch(err => {
-          console.log(err)
+          this.$eventHub.$emit('show-snackbar', { body: err, color: 'error'})
         })
       }
     }

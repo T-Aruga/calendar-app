@@ -38,9 +38,10 @@
     methods: {
       signup() {
         this.axios.post("/api/user", { user: this.user }).then(res => {
+          this.$eventHub.$emit('show-snackbar', { body: 'ユーザーの登録が成功しました'})
           this.$router.push({ name: 'login' })
         }).catch(err => {
-          console.log(err)
+          this.$eventHub.$emit('show-snackbar', { body: err, color: 'error'})
         })
       }
     }
