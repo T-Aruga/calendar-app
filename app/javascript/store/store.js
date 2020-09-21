@@ -5,9 +5,16 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
+    user: null,
   },
   getters: {},
   mutations: {
+    'set-user' (state, payload) {
+      state.user = payload
+    },
+    'logout-user' (state) {
+      state.user = null
+    }
   },
   actions: {},
 });

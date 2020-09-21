@@ -14,11 +14,13 @@ import store from "../store/store.js";
 import router from "../routes/router.js";
 import App from '../App.vue'
 import axios from "axios";
+import VueAxiosPlugin from "./plugins/axios-plugin.js";
 import VueAxios from "vue-axios";
 import eventHub from "../eventHub.js"
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
+Vue.use(VueAxiosPlugin, { axios: axios });
 Vue.use(VueAxios, axios);
 Vue.use(Vuetify)
 Vue.use(eventHub)
